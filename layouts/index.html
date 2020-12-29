@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div id="hero">
-    <div class="row">
-        <div class="col-md-6 order-1 mx-auto my-auto">
+<div class="container-fluid" id="hero">
+    <div class="row align-items-start">
+        <div class="col-md-6">
             <h1 class="text-center my-5">Willkommen bei der Luisenmedia-AG</h1>
             <div class="animated-logo mx-auto mt-5" style="max-width: 500px">
                 <div class="container">
@@ -13,87 +13,88 @@
                     <div id="cursor"></div>
                 </div>
             </div>
-            <p class="text-center mt-5">Hier findet ihr regelmäßig neue Beiträge in Form von Blogposts, Podcasts oder
+            <p class="text-center mt-5">Hier findet ihr regelmäßig neue Beiträge in Form von Blogposts, Podcasts
+                oder
                 Vlogs.</p>
         </div>
-        <div class="col-md-6 order-2">
+        <div class="col-md-6">
             <img class="mx-auto my-auto" {{ with .Site.Params.bannerimage }} src="{{ . | absURL }}" {{ end }}
                 alt="Luisenmedia-AG Bannerimage">
         </div>
-        <script>
-            // List of sentences
-var _CONTENT = [ 
-"Wir schreiben Vielfalt!", 
-"Wir reden Vielfalt!", 
-"Wir zeigen Vielfalt!", 
-"Wir leben Vielfalt!"
-];
-
-// Current sentence being processed
-let _PART = 0;
-
-// Character number of the current sentence being processed 
-let _PART_INDEX = 0;
-
-// Holds the handle returned from setInterval
-let _INTERVAL_VAL;
-
-// Element that holds the text
-let _ELEMENT = document.querySelector("#text");
-
-// Cursor element 
-let _CURSOR = document.querySelector("#cursor");
-
-// Implements typing effect
-function Type() { 
-// Get substring with 1 characater added
-let text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-_ELEMENT.innerHTML = text;
-_PART_INDEX++;
-
-// If full sentence has been displayed then start to delete the sentence after some time
-if(text === _CONTENT[_PART]) {
-    // Hide the cursor
-    _CURSOR.style.display = 'none';
-
-    clearInterval(_INTERVAL_VAL);
-    setTimeout(function() {
-        _INTERVAL_VAL = setInterval(Delete, 50);
-    }, 1500);
-}
-}
-
-// Implements deleting effect
-function Delete() {
-// Get substring with 1 characater deleted
-let text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
-_ELEMENT.innerHTML = text;
-_PART_INDEX--;
-
-// If sentence has been deleted then start to display the next sentence
-if(text === 'Wir ') {
-    clearInterval(_INTERVAL_VAL);
-
-    // If current sentence was last then display the first one, else move to the next
-    if(_PART == (_CONTENT.length - 1))
-        _PART = 0;
-    else
-        _PART++;
-    
-    _PART_INDEX = 0;
-
-    // Start to display the next sentence after some time
-    setTimeout(function() {
-        _CURSOR.style.display = 'inline-block';
-        _INTERVAL_VAL = setInterval(Type, 100);
-    }, 200);
-}
-}
-
-// Start the typing effect on load
-_INTERVAL_VAL = setInterval(Type, 100);
-        </script>
-
     </div>
 </div>
+
+<script>
+    // List of sentences
+    var _CONTENT = [
+        "Wir schreiben Vielfalt!",
+        "Wir reden Vielfalt!",
+        "Wir zeigen Vielfalt!",
+        "Wir leben Vielfalt!"
+    ];
+
+    // Current sentence being processed
+    let _PART = 0;
+
+    // Character number of the current sentence being processed 
+    let _PART_INDEX = 0;
+
+    // Holds the handle returned from setInterval
+    let _INTERVAL_VAL;
+
+    // Element that holds the text
+    let _ELEMENT = document.querySelector("#text");
+
+    // Cursor element 
+    let _CURSOR = document.querySelector("#cursor");
+
+    // Implements typing effect
+    function Type() {
+        // Get substring with 1 characater added
+        let text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+        _ELEMENT.innerHTML = text;
+        _PART_INDEX++;
+
+        // If full sentence has been displayed then start to delete the sentence after some time
+        if (text === _CONTENT[_PART]) {
+            // Hide the cursor
+            _CURSOR.style.display = 'none';
+
+            clearInterval(_INTERVAL_VAL);
+            setTimeout(function () {
+                _INTERVAL_VAL = setInterval(Delete, 50);
+            }, 1500);
+        }
+    }
+
+    // Implements deleting effect
+    function Delete() {
+        // Get substring with 1 characater deleted
+        let text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+        _ELEMENT.innerHTML = text;
+        _PART_INDEX--;
+
+        // If sentence has been deleted then start to display the next sentence
+        if (text === 'Wir ') {
+            clearInterval(_INTERVAL_VAL);
+
+            // If current sentence was last then display the first one, else move to the next
+            if (_PART == (_CONTENT.length - 1))
+                _PART = 0;
+            else
+                _PART++;
+
+            _PART_INDEX = 0;
+
+            // Start to display the next sentence after some time
+            setTimeout(function () {
+                _CURSOR.style.display = 'inline-block';
+                _INTERVAL_VAL = setInterval(Type, 100);
+            }, 200);
+        }
+    }
+
+    // Start the typing effect on load
+    _INTERVAL_VAL = setInterval(Type, 100);
+</script>
 {{ end }}
