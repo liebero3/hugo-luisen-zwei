@@ -1,7 +1,7 @@
 title = "Luisenmedia AG"
 baseURL = "https://liebero3.github.io/hugo-luisen-zwei/"
 theme = "researcher"
-disableKinds = ["taxonomy", "term"]
+# disableKinds = ["taxonomy", "term"]
 enableEmoji = true
 math = true          # enable KaTeX (https://katex.org/) globally
 # googleAnalytics = ""  # add your tracking id
