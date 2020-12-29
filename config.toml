@@ -37,7 +37,7 @@ pluralizeListTitles = false
     url = "/vlog/"
     weight = 3
   [[menu.main]]
-    name = "ABOUT"
+    name = "ÜBER UNS"
     url = "/about"
     weight = 4
 
