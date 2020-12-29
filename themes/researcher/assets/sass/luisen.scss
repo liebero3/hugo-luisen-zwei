@@ -113,6 +113,8 @@ hr.luisen-blue {
         display: block;
         margin: $y-medium auto;
     }
+
+
     .avatar > img {
         border-radius: 50%;
         float: right;
@@ -181,4 +183,32 @@ hr.luisen-blue {
     a {
         @extend %link-dark;
     }
+}
+
+#text {
+    margin-top: 1rem;
+	display: inline-block;
+	vertical-align: middle;
+	color: $black;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+#cursor {
+    margin-top: 1rem;
+	display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+	height: 1.5rem;
+	background-color: $black;
+	animation: blink .75s step-end infinite;
+}
+
+@keyframes blink {
+	from, to { 
+		background-color: transparent 
+	}
+	50% { 
+		background-color: $black; 
+	}
 }

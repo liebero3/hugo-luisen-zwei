@@ -12,6 +12,7 @@ pluralizeListTitles = false
   description = "Die Medien-AG des Luisen-Gymnasium Düsseldorf"
   favicon = "luisen-favicon.png"  # path to a .ico to use as favicon
   logo = "logo-menu.svg"
+  bannerimage = "banner.svg"
   [params.footer]
     text = "By Luisenmedia AG"
     url = "https://github.com/liebero3/hugo-luisen-eins"
