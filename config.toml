@@ -15,7 +15,7 @@ pluralizeListTitles = false
   bannerimage = "banner.svg"
   [params.footer]
     text = "By Luisenmedia AG"
-    url = "https://github.com/liebero3/hugo-luisen-eins"
+    url = "https://github.com/liebero3/hugo-luisen-zwei"
 
 [permalinks]
   "/" = "/:filename"
