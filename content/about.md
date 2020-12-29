@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2020-12-27T18:04:27+01:00
-draft: true
+draft: false
 ---
 
 ## Über diese Seite

@@ -1,7 +1,7 @@
 ---
 title: "Sixth Post"
 date: 2020-12-28T23:33:56+01:00
-draft: true
+draft: false
 author: "Till Lieber"
 image: ""
 ---
