@@ -1,0 +1,17 @@
+name = "LuisenmediaAG"
+license = "GPL-3.0"
+licenselink = ""
+description = "A simple bootstrap starting theme of LuisenmediaAG for Hugo."
+tags = ["blog", "bootstrap", "responsive"]
+features = ["bootstrap", "responsive"]
+homepage = ""
+min_version = "0.74.3"
+
+[author]
+  name = "Till Lieber"
+  homepage = ""
+
+[original]
+  author = ""
+  homepage = ""
+  repo = ""

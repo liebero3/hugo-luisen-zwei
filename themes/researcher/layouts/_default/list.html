@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container-lg">
+    <h1 class="mb-5">{{ .Title }}</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{ range .Pages.ByDate }}
+        <div class="col mb-5">
+            <div class="card h-100">
+                {{ with .Resources.ByType "image" }}
+                {{ range . }}
+                {{ $image := .Fill "600x400"}}
+                <!-- <img {{ with .Params.image }} src="{{ . | absURL }}" {{ end }} class="card-img-top" alt="..."> -->
+                <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="...">
+                {{ end }}
+                {{ end }}
+                <div class="card-body">
+                    <h5 class="card-title">{{ .Title }}</h5>
+                    <p class="card-text">{{ .Summary }}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{ .Date.Format "2006-01-02" }}</small>
+                    <small class="text-muted">{{ .Param "author" }}</small>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

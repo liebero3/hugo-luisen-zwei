@@ -1,0 +1,31 @@
+{{ with .Site.Params.favicon }}
+<link rel="icon" type="image/ico" href="{{ . | absURL }}">
+{{ end }}
+
+<div class="container-lg">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}"><img style="height: 35px" {{ with .Site.Params.logo }}
+        src="{{ . | absURL }}" {{ end }} alt="luisen-logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        {{ with .Site.Menus.main }}
+        {{ $navbar_len := len . }}
+        {{ range $i, $nav_item := . }}
+        <li class="nav-item">
+          <a class="nav-item nav-link text-center" style="font-size:1.3rem" href="{{ $nav_item.URL }}">
+            {{ $nav_item.Pre }}{{ $nav_item.Name }}{{ $nav_item.Post }}
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </nav>
+</div>
+<hr>
