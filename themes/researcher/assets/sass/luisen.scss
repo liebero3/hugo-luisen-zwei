@@ -2,7 +2,7 @@
 
 // Internal variables
 $y-small: 0.6rem;
-$y-medium: 1.0rem;
+$y-medium: 1rem;
 
 // Placeholders
 %link-default {
@@ -38,7 +38,7 @@ $y-medium: 1.0rem;
 // Style
 * {
     color: $black;
-    font-family: 'Montserrat', Verdana, sans-serif;
+    font-family: "Montserrat", Verdana, sans-serif;
     line-height: 1.2;
 }
 
@@ -56,7 +56,6 @@ $y-medium: 1.0rem;
 
 hr {
     margin: 0;
-
 }
 
 hr.luisen-yellow {
@@ -91,7 +90,6 @@ hr.luisen-blue {
     margin-bottom: 10px;
 }
 
-
 #content {
     a {
         @extend %link-default;
@@ -99,7 +97,12 @@ hr.luisen-blue {
     p {
         margin-bottom: $y-small;
     }
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-size: medium;
         font-weight: bold;
         margin: $y-medium 0 $y-small 0;
@@ -113,7 +116,6 @@ hr.luisen-blue {
         display: block;
         margin: $y-medium auto;
     }
-
 
     .avatar > img {
         border-radius: 50%;
@@ -173,42 +175,42 @@ hr.luisen-blue {
     }
 
     .card {
-
         img {
             margin: 0px;
         }
     }
+    #text {
+        margin-top: 0.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        color: $black;
+        letter-spacing: 2px;
+        font-size: 1.5rem;
+    }
+
+    #cursor {
+        margin-top: 0.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        width: 3px;
+        height: 1.5rem;
+        background-color: $black;
+        animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+        from,
+        to {
+            background-color: transparent;
+        }
+        50% {
+            background-color: $black;
+        }
+    }
 }
+
 #footer {
     a {
         @extend %link-dark;
     }
-}
-
-#text {
-    margin-top: .5rem;
-	display: inline-block;
-	vertical-align: middle;
-	color: $black;
-    letter-spacing: 2px;
-    font-size: 1.5rem;
-}
-
-#cursor {
-    margin-top: .5rem;
-	display: inline-block;
-	vertical-align: middle;
-	width: 3px;
-	height: 1.5rem;
-	background-color: $black;
-	animation: blink .75s step-end infinite;
-}
-
-@keyframes blink {
-	from, to { 
-		background-color: transparent 
-	}
-	50% { 
-		background-color: $black; 
-	}
 }
