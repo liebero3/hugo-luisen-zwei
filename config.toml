@@ -1,5 +1,5 @@
 title = "Luisenmedia AG"
-baseURL = "https://example.com"
+baseURL = "https://liebero3.github.io/hugo-luisen-zwei/"
 theme = "researcher"
 disableKinds = ["taxonomy", "term"]
 enableEmoji = true
